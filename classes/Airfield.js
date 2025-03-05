@@ -38,4 +38,13 @@ class Airfield{
             plane.move()
         })
     }
+
+    // checkPos(){
+    //     this.planes.forEach(plane => {
+    //         if (plane.posX > this.width/2) {
+    //             plane.posX = -this.width/2;
+    //             plane.posY = map(plane.posY,0,this.width,this.width,0)
+    //         } else if
+    //     })
+    // }
 }
