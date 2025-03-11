@@ -8,6 +8,7 @@ class Plane {
         this.tail = obj.tail ?? 4;
         this.velX = obj.velX ?? random(-0.9,0.9);
         this.velY = obj.velY ?? random(-0.9,0.9);
+        this.alert = false
     }
 
     renderPlane(){
@@ -26,6 +27,11 @@ class Plane {
             vertex(-this.tail,this.apWidth/2)
            
         endShape(CLOSE)
+
+        if (this.alert == true) {
+            noFill();
+            ellipse(0,0,this.apHeight*2);
+        }
         pop()
     }
 
@@ -38,7 +44,7 @@ class Plane {
 
         this.posX = this.posX+this.velX;
         this.posY = this.posY+this.velY;
-        console.log("x = ", this.posX, "y = ", this.posY)
+        // console.log("x = ", this.posX, "y = ", this.posY)
 
        
     }

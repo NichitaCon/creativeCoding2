@@ -39,12 +39,38 @@ class Airfield{
         })
     }
 
-    // checkPos(){
-    //     this.planes.forEach(plane => {
-    //         if (plane.posX > this.width/2) {
-    //             plane.posX = -this.width/2;
-    //             plane.posY = map(plane.posY,0,this.width,this.width,0)
-    //         } else if
-    //     })
-    // }
+    checkDist(){
+ 
+        // this.planes.forEach(plane => plane.alert == false)
+        let count = 0;
+        for(let i=0; i<this.planes.length; i++){
+            for(let j=i+1; j<this.planes.length; j++){
+               
+                let planeA = this.planes[i];
+                let planeB = this.planes[j];
+                let dist = sqrt((sq(planeA.posX - planeB.posX))+(sq(planeA.posY - planeB.posY)));
+                if(dist<50){
+                    planeA.alert = true;
+                    planeB.alert = true;
+                } else {
+                    planeA.alert = false;
+                    planeB.alert = false;
+                }
+                console.log(dist);
+                count++;
+            }
+        }
+        console.log(count);
+
+       
+    }
+
+    checkPos(){
+        this.planes.forEach(plane => {
+            if (plane.posX > this.width/2) {
+                plane.posX = -this.width/2;
+                plane.posY = map(plane.posY,0,this.width,this.width,0)
+            }
+        });
+    }
 }
