@@ -1,28 +1,31 @@
 let airfields = [];
+let myKey = "";
+
 
 function setup(){
     createCanvas(500,500);
     
     angleMode(DEGREES)
-    rectMode(CENTER)
     airfields.push(new Airfield({
         numPlanes:10,
-        width:200,
-        height:200,
+        aWidth:200,
+        aHeight:200,
         posX:150,
         posY:200,
     }))
 
-    // airfields.push(new Airfield({
-    //     numPlanes:10,
-    //     width:200,
-    //     height:200,
-    //     posX:350,
-    //     posY:150,
-    // }))
+
+
+    
 }
  
  
+function keyPressed() {
+    console.log(key)
+    myKey = key
+    console.log(airfields[0].planes.length)
+  }
+
 function draw(){
     background(221,161,94);
     airfields.forEach(airfields => {
@@ -32,5 +35,7 @@ function draw(){
         airfields.checkDist()
         airfields.checkPos()
     })
+
+    text(myKey,100,100)
 
 }
