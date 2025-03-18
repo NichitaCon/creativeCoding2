@@ -1,9 +1,7 @@
-class Plane {
+class AirCraft {
  
     constructor(obj){
         this.pos = createVector( obj.posX ?? random(0,500), obj.posY ?? random(0,500))
-        this.posX = obj.posX ?? random(0,500);
-        this.posY = obj.posY ?? random(0,500);
         this.speed = obj.speed ?? random(3);
         this.angle = obj.angle ?? random(360);
         this.apWidth = obj.apWidth ?? 15;
@@ -16,7 +14,7 @@ class Plane {
         this.velY = this.speed*sin(this.angle);
     }
 
-    renderPlane(id){
+    renderAirCraft(id){
         push()
         translate(this.posX,this.posY)
         // let angle = atan2(this.velY,this.velX);

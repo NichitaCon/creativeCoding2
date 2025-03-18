@@ -1,12 +1,12 @@
 class Airfield{
     constructor(obj){
-        this.numPlanes = obj.numPlanes ?? 50;
+        this.numAirCrafts = obj.numAirCrafts ?? 50;
         this.aWidth = obj.aWidth ?? 400;
         this.aHeight = obj.aHeight ?? 400;
         this.posX = obj.posX ?? 250;
         this.posY = obj.posY ?? 250;
         this.planes = [];
-        this.generatePlanes();
+        this.generateAirCrafts();
     }
 
     renderAirfield(){
