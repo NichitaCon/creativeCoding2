@@ -26,7 +26,7 @@ class Airfield{
         pop();
     }
 
-    generatePlanes(){
+    generateCrafts(){
         for (let i=0; i<this.numPlanes; i++) {
             this.planes.push(new Plane({
                 posX: random(0,200), 

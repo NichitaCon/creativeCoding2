@@ -6,7 +6,25 @@ function setup(){
     createCanvas(500,500);
     
     angleMode(DEGREES)
-    airfields.push(new Airfield({
+    // airfields.push(new Airfield({
+    //     numPlanes:10,
+    //     aWidth:200,
+    //     aHeight:200,
+    //     posX:150,
+    //     posY:200,
+    // }))
+
+    // angleMode(DEGREES)
+    // airfields.push(new AirfieldAirCraft({
+    //     numPlanes:10,
+    //     aWidth:200,
+    //     aHeight:200,
+    //     posX:150,
+    //     posY:200,
+    // }))
+
+    angleMode(DEGREES)
+    airfields.push(new AirfieldAirCraft({
         numPlanes:10,
         aWidth:200,
         aHeight:200,
@@ -30,7 +48,7 @@ function draw(){
     background(221,161,94);
     airfields.forEach(airfields => {
         airfields.renderAirfield()
-        airfields.renderPlanes()
+        airfields.renderAirCrafts()
         airfields.movePlanes()
         airfields.checkDist()
         airfields.checkPos()

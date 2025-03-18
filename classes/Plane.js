@@ -1,19 +1,11 @@
-class Plane {
+class Plane extends Craft {
  
     constructor(obj){
-        this.pos = createVector( obj.posX ?? random(0,500), obj.posY ?? random(0,500))
-        this.posX = obj.posX ?? random(0,500);
-        this.posY = obj.posY ?? random(0,500);
-        this.speed = obj.speed ?? random(3);
-        this.angle = obj.angle ?? random(360);
-        this.apWidth = obj.apWidth ?? 15;
-        this.apHeight = obj.apHeight ?? 20;
+
+        super(obj);
+
         this.tail = obj.tail ?? 4;
         this.alert = false
-
-        
-        this.velX = this.speed*cos(this.angle);
-        this.velY = this.speed*sin(this.angle);
     }
 
     renderPlane(id){
@@ -42,19 +34,7 @@ class Plane {
         pop()
     }
 
-    move(){
 
-
-        // if (this.posX > 500) {
-
-        // }
-
-        this.posX = this.posX+this.velX;
-        this.posY = this.posY+this.velY;
-        // console.log("x = ", this.posX, "y = ", this.posY)
-
-       
-    }
 
 
 }
