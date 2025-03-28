@@ -10,7 +10,7 @@ function setup(){
         numPlanes:10,
         aWidth:200,
         aHeight:200,
-        posX:150,
+        posX:100,
         posY:200,
     }))
 

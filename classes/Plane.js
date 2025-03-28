@@ -1,8 +1,11 @@
 class Plane {
  
     constructor(obj){
-        this.posX = obj.posX ?? random(0,500);
-        this.posY = obj.posY ?? random(0,500);
+        this.pos = createVector(
+            obj.pos.x ?? random(0,500),
+            obj.pos.y ?? random(0,500)
+        )
+
         this.speed = obj.speed ?? random(3);
         this.angle = obj.angle ?? random(360);
         this.apWidth = obj.apWidth ?? 15;
@@ -17,7 +20,7 @@ class Plane {
 
     renderPlane(id){
         push()
-        translate(this.posX,this.posY)
+        translate(this.pos.x,this.pos.y)
         // let angle = atan2(this.velY,this.velX);
         // ellipse(0,0,10,10);
         textSize(15)
@@ -42,16 +45,8 @@ class Plane {
     }
 
     move(){
-
-
-        // if (this.posX > 500) {
-
-        // }
-
-        this.posX = this.posX+this.velX;
-        this.posY = this.posY+this.velY;
-        // console.log("x = ", this.posX, "y = ", this.posY)
-
+        this.pos.x = this.pos.x+this.velX;
+        this.pos.y = this.pos.y+this.velY;
        
     }
 
