@@ -17,19 +17,19 @@ class Craft {
     }
 
     turnLeft() {
-        this.futureAngle += 15
-        console.log("left")
+        this.futureAngle += 15;
+        console.log("left");
     }
 
     turnRight() {
-        this.futureAngle -= 15
-        console.log("right")
+        this.futureAngle -= 15;
+        console.log("right");
     }
 
     increaseSpeed() {
         this.speed += 0.3;
         this.updateVelocity();
-        console.log("increase speed called")
+        console.log("increase speed called");
     }
 
     decreaseSpeed() {
@@ -45,6 +45,7 @@ class Craft {
     }
 
     renderCraft(id) {
+       
         push();
         translate(this.pos.x, this.pos.y);
         // let angle = atan2(this.velY,this.velX);
@@ -53,10 +54,10 @@ class Craft {
         text(id, 10, 0);
 
         rotate(this.angle);
-        noFill()
+        noFill();
         strokeWeight(1);
-        
-        ellipse(0,0,this.width)
+
+        ellipse(0, 0, this.width);
 
         if (this.alert == true) {
             noFill();
@@ -67,11 +68,11 @@ class Craft {
 
     move() {
         if (this.angle < this.futureAngle) {
-            this.angle += .5;
-            this.updateVelocity()
+            this.angle += 0.5;
+            this.updateVelocity();
         } else if (this.angle > this.futureAngle) {
-            this.angle -= .5;
-            this.updateVelocity()
+            this.angle -= 0.5;
+            this.updateVelocity();
         }
         this.pos.x = this.pos.x + this.vel.x;
         this.pos.y = this.pos.y + this.vel.y;

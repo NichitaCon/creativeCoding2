@@ -12,7 +12,7 @@ class Airfield {
     renderAirfield() {
         push();
         translate(this.posX, this.posY);
-        fill(255, 0, 0);
+        fill(119, 222, 255);
         rect(0, 0, this.aWidth, this.aHeight);
         pop();
     }
@@ -30,7 +30,7 @@ class Airfield {
         for (let i = 0; i < this.numCrafts; i++) {
             let num = random(0, 100);
             console.log(num)
-            if (num < 50) {
+            if (num < 10) {
                 console.log("plane")
                 this.crafts.push(
                     new Plane({
@@ -42,7 +42,7 @@ class Airfield {
             } else {
                 console.log("crafdt")
                 this.crafts.push(
-                    new Craft({
+                    new Ghost({
                         pos: createVector(150, 150),
                         speed: random(4),
                         angle: random(360),
