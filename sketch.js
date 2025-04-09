@@ -5,15 +5,15 @@ function setup() {
     createCanvas(500, 500);
 
     angleMode(DEGREES);
-    // airfields.push(
-    //     new Airfield({
-    //         numCrafts: 10,
-    //         aWidth: 200,
-    //         aHeight: 200,
-    //         posX: 100,
-    //         posY: 200,
-    //     })
-    // );
+    airfields.push(
+        new Airfield({
+            numCrafts: 3,
+            aWidth: 100,
+            aHeight: 100,
+            posX: 300,
+            posY: 200,
+        })
+    );
 
     airfields.push(
         new Airfield({

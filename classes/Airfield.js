@@ -83,39 +83,26 @@ class Airfield {
     checkPos() {
         this.crafts.forEach((craft) => {
             //Right side
-            if (craft.pos.x > 200) {
+            if (craft.pos.x > this.aWidth) {
                 craft.pos.x = 0;
-                craft.pos.y = map(craft.pos.y, 0, this.aWidth, this.aWidth, 0);
+                craft.pos.y = map(craft.pos.y, 0, this.aHeight, 0, this.aHeight);
             }
-
             //Bottom side
-            if (craft.pos.y > 200) {
+            if (craft.pos.y > this.aHeight) {
                 craft.pos.y = 0;
-                craft.pos.x = map(
-                    craft.pos.x,
-                    0,
-                    this.aHeight,
-                    this.aHeight,
-                    0
-                );
+                craft.pos.x = map(craft.pos.x, 0, this.aWidth, 0, this.aWidth);
             }
 
             //Left side
             if (craft.pos.x < 0) {
-                craft.pos.x = 200;
-                craft.pos.y = map(craft.pos.y, 0, this.aWidth, this.aWidth, 0);
+                craft.pos.x = this.aWidth;
+                craft.pos.y = map(craft.pos.y, 0, this.aHeight, 0, this.aHeight);
             }
 
             //Top side
             if (craft.pos.y < 0) {
-                craft.pos.y = 200;
-                craft.pos.x = map(
-                    craft.pos.x,
-                    0,
-                    this.aHeight,
-                    this.aHeight,
-                    0
-                );
+                craft.pos.y = this.aHeight;
+                craft.pos.x = map(craft.pos.x, 0, this.aWidth, 0, this.aWidth);
             }
         });
     }
