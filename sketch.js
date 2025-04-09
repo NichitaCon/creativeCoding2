@@ -7,7 +7,7 @@ function setup() {
     angleMode(DEGREES);
     airfields.push(
         new Airfield({
-            numPlanes: 10,
+            numCrafts: 10,
             aWidth: 200,
             aHeight: 200,
             posX: 100,
@@ -26,8 +26,8 @@ function draw() {
     background(221, 161, 94);
     airfields.forEach((airfields) => {
         airfields.renderAirfield();
-        airfields.renderPlanes();
-        airfields.movePlanes();
+        airfields.renderCrafts();
+        airfields.moveCrafts();
         airfields.checkDist();
         airfields.checkPos();
     });

@@ -44,7 +44,7 @@ class Craft {
         );
     }
 
-    renderPlane(id) {
+    renderCraft(id) {
         push();
         translate(this.pos.x, this.pos.y);
         // let angle = atan2(this.velY,this.velX);
