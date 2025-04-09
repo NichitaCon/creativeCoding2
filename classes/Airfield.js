@@ -28,10 +28,10 @@ class Airfield{
 
     generatePlanes(){
         for (let i=0; i<this.numPlanes; i++) {
-            this.planes.push(new Plane({
+            this.planes.push(new Craft({
                 pos: createVector(
-                    random(0,200),
-                    random(0,200)
+                    random(0,this.aWidth),
+                    random(0,this.aHeight)
                 ),
                 speed: random(4),
                 angle: random(360)
